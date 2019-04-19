@@ -5,7 +5,11 @@ const port = process.env.PORT || 4000;
 function run_query(connection, query) {
 	return new Promise((res,rej)=> {
 		connection.execute(query, (err,result)=> {
-			err ? rej(err) : res(result);
+			if(err) {
+				rej(err);
+			} else {
+				res(err);
+			}
 		})
 	});
 }
