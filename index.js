@@ -8,7 +8,7 @@ function run_query(connection, query) {
 			if(err) {
 				rej(err);
 			} else {
-				res(err);
+				res(result);
 			}
 		})
 	});
